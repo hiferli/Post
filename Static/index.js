@@ -4,7 +4,9 @@ function apiCalling() {
         url: "/",
 
         success: function (data) {
-            console.log(data);
+            data = JSON.parse(data);
+            console.log(data["PinCode"]);
+            getInformation(data["PinCode"])
         },
 
         error: function() {
@@ -20,3 +22,17 @@ $(document).ready(function () {
     });
 });
 
+function getInformation(pincode) {
+    api = "https://api.postalpincode.in/pincode/" + pincode;
+    
+    $.ajax({
+        type: "GET",
+        url: api,
+        
+        success: function (response) {
+            console.log(response)
+            
+        }
+    });
+
+}
