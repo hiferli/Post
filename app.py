@@ -1,10 +1,26 @@
-from flask import Flask , render_template
+import json
+from flask import Flask , render_template , request
 
 app = Flask(__name__)
 
-@app.route("/")
-def main():
-    return render_template("main.html");
+@app.route("/" , methods = ["GET" , "POST"])
+def home():
+    if request.method == "POST":
+        # pincode = request.form.get("pincode");
+        pincode = request.form.get("pin");
+
+        if not pincode:
+            pincode = "110001"
+
+        print(pincode)
+        data =  json.dumps({
+            "PinCode" : (pincode)
+        })
+
+        return data;
+    
+    data = "Blabalabala";
+    return render_template("main.html")
 
 
 if __name__ == "__main__":
