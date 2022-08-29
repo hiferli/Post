@@ -12,7 +12,7 @@
     <form method="POST" action="{{ url_for('main') }}" class="container">
       <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label">PIN Code</label>
-        <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        <input type="number" class="form-control" id="pincode" name="pincode" aria-describedby="emailHelp">
         <div id="emailHelp" class="form-text">Not sure about your Pincode? <a href="http://www.referencer.in/PIN_Codes.aspx">Click Here!</a></div>
       </div>
       <button type="submit" class="btn btn-primary">Submit</button>
@@ -20,5 +20,6 @@
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+    <script src="{{url_for('static', filename='index.js')}}"></script>
   </body>
 </html>
