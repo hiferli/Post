@@ -9,10 +9,10 @@
   <body>
     
     <br>
-    <form action="POST" class="container">
+    <form method="POST" action="{{ url_for('main') }}" class="container">
       <div class="mb-3">
         <label for="exampleInputEmail1" class="form-label">PIN Code</label>
-        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
         <div id="emailHelp" class="form-text">Not sure about your Pincode? <a href="http://www.referencer.in/PIN_Codes.aspx">Click Here!</a></div>
       </div>
       <button type="submit" class="btn btn-primary">Submit</button>
