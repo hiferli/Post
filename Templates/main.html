@@ -9,13 +9,18 @@
   <body>
     
     <br>
-    <form method="POST" action="{{ url_for('home') }}" class="container">
+    <!-- <form method="POST" action="{{ url_for('home') }}" class="container">
       <label for="exampleInputEmail1" class="form-label">PIN Code</label>
-      <input type="text" class="form-control" id="pincode" name="pin" aria-describedby="emailHelp">
+      <input type="text" class="form-control" id="pincode" name="pin" aria-describedby="emailHelp" placeholder="110001">
       <div id="emailHelp" class="form-text">Not sure about your Pincode? <a href="http://www.referencer.in/PIN_Codes.aspx">Click Here!</a></div>
       <button type="submit" class="btn btn-primary" id="submit">Submit</button>
-    </form>
+    </form>     -->
     
+    <form action="{{ url_for('home') }}" method="post">
+      <input type="text" id="pin" name="pin">
+      <button type="submit" class="btn btn-primary" id="submit">Submit</button>
+    </form>
+
     <br>
     <br>
 
