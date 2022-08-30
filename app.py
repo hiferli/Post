@@ -7,9 +7,10 @@ app = Flask(__name__)
 def home():
     if request.method == "POST":
         # pincode = request.form.get("pincode");
-        pincode = request.form.get("pin");
-
+        pincode = request.form["pin"];
+        
         if not pincode:
+            print("Nahi chall rha.... Try again")
             pincode = "110001"
 
         print(pincode)

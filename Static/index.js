@@ -30,9 +30,31 @@ function getInformation(pincode) {
         url: api,
         
         success: function (response) {
-            console.log(response)
-            
+            // console.log(response)
+            allPostOffices = response[0]["PostOffice"]
+            // console.log(allPostOffices)
+            $("#infoTable").empty();
+
+            for(let i = 0; i < allPostOffices.length; i++){
+                addEntity(allPostOffices[i] , i + 1);
+            }
+
         }
     });
+}
 
+function addEntity(data , i) {
+    console.log(data)
+    var entity = '';
+    entity += '<tr>'
+    
+    entity += '<td>' + i + '</td>'
+    entity += '<td>' + data["Name"] + '</td>'
+    entity += '<td>' + data["Division"] + '</td>'
+    entity += '<td>' + data["District"] + '</td>'
+    entity += '<td>' + data["State"] + '</td>'
+
+    entity += '</tr>'
+
+    $("#infoTable").append(entity);
 }
